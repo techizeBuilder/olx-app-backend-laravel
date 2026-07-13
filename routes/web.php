@@ -25,6 +25,7 @@ use App\Http\Controllers\SeoSettingController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\BannerAdController;
 use App\Http\Controllers\SystemUpdateController;
 use App\Http\Controllers\TipController;
 use App\Http\Controllers\UserVerificationController;
@@ -381,6 +382,11 @@ Route::group(['middleware' => ['auth', 'language']], static function () {
     /*** Slider Module : START ***/
     Route::resource('slider', SliderController::class);
     /*** Slider Module : END ***/
+
+    /*** Banner Ads Module : START ***/
+    Route::get('banner-ads/show', [BannerAdController::class, 'show'])->name('banner-ads.show');
+    Route::resource('banner-ads', BannerAdController::class)->except(['show']);
+    /*** Banner Ads Module : END ***/
 
     /*** Package Module : STARTS ***/
     Route::group(['prefix' => 'users-packages'], static function () {

@@ -69,6 +69,7 @@ class SystemUpgradeSeeder extends Seeder
             'home-screen-section' => [
                 'only' => ['list', 'update']
             ],
+            'banner-ad' => '*',
         ];
 
         $permissionsList = self::generatePermissionList($permissionsList);

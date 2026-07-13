@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\Banner;
 use App\Models\Category;
 use App\Models\City;
 use App\Models\ContactUs;
@@ -306,6 +307,56 @@ class SettingsApiController extends BaseApiController
             ResponseService::successResponse(null, $rows);
         } catch (\Throwable $th) {
             ResponseService::logErrorResponse($th, 'API Controller -> getSlider');
+            ResponseService::errorResponse();
+        }
+    }
+
+    /**
+     * Banner ads for a given platform + page, in placement order.
+     * e.g. /api/get-banner-ads?platform=app&page=home
+     */
+    public function getBannerAds(Request $request)
+    {
+        try {
+            $validator = Validator::make($request->all(), [
+                'platform' => 'nullable|in:' . implode(',', Banner::PLATFORMS),
+                'page'     => 'nullable|in:' . implode(',', Banner::PAGES),
+            ]);
+            if ($validator->fails()) {
+                ResponseService::validationError($validator->errors()->first());
+            }
+
+            $banners = Banner::with(['bannerItems.category:id,name,slug', 'bannerItems.item:id,name,slug'])
+                ->where('status', 1)
+                ->when($request->filled('platform'), fn($q) => $q->where('platform', $request->platform))
+                ->when($request->filled('page'), fn($q) => $q->where('page', $request->page))
+                ->orderBy('sequence')
+                ->get()
+                ->map(function (Banner $banner) {
+                    return [
+                        'id'       => $banner->id,
+                        'platform' => $banner->platform,
+                        'page'     => $banner->page,
+                        'layout'   => $banner->layout,
+                        'sequence' => $banner->sequence,
+                        'banners'  => $banner->bannerItems->map(fn($item) => [
+                            'id'            => $item->id,
+                            'position'      => $item->position,
+                            'image'         => $item->image,
+                            'ad_type'       => $item->ad_type,
+                            'category_id'   => $item->category_id,
+                            'category'      => $item->category,
+                            'item_id'       => $item->item_id,
+                            'item'          => $item->item,
+                            'external_link' => $item->external_link,
+                            'target'        => $item->target,
+                        ])->values(),
+                    ];
+                });
+
+            ResponseService::successResponse(null, $banners);
+        } catch (\Throwable $th) {
+            ResponseService::logErrorResponse($th, 'API Controller -> getBannerAds');
             ResponseService::errorResponse();
         }
     }

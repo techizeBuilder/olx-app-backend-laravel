@@ -26,7 +26,8 @@
                 @canany(['advertisement-list', 'advertisement-create', 'advertisement-update', 'advertisement-delete','category-list', 'category-create', 'category-update', 'category-delete', 'custom-field-list',
                     'custom-field-create', 'custom-field-update', 'custom-field-delete','feature-section-list', 'feature-section-create', 'feature-section-update',
                     'feature-section-delete','slider-list', 'slider-create', 'slider-update', 'slider-delete', 'home-screen-section-list', 'home-screen-section-update',
-                    'tip-list', 'tip-create', 'tip-update', 'tip-delete'])
+                    'tip-list', 'tip-create', 'tip-update', 'tip-delete',
+                    'banner-ad-list', 'banner-ad-create', 'banner-ad-update', 'banner-ad-delete'])
                     <li class="sidebar-item has-sub">
                         <a href="#" class='sidebar-link'>
                             <x-icon-ads-listing class="w-5 h-5" />
@@ -67,6 +68,11 @@
                             @canany(['tip-list', 'tip-create', 'tip-update', 'tip-delete'])
                                 <li class="submenu-item">
                                     <a href="{{ route('tips.index') }}">{{ __('Offer Item Tips') }}</a>
+                                </li>
+                            @endcanany
+                            @canany(['banner-ad-list', 'banner-ad-create', 'banner-ad-update', 'banner-ad-delete'])
+                                <li class="submenu-item">
+                                    <a href="{{ route('banner-ads.index') }}">{{ __('Banner Ads') }}</a>
                                 </li>
                             @endcanany
                         </ul>

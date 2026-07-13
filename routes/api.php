@@ -148,6 +148,7 @@ Route::get('get-currencies', [SettingsApiController::class, 'getCurrencies']);
 Route::get('get-languages', [SettingsApiController::class, 'getLanguages']);
 Route::get('get-system-languages-codes', [SettingsApiController::class, 'getSystemLanguagesCodes']);
 Route::get('get-slider', [SettingsApiController::class, 'getSlider']);
+Route::get('get-banner-ads', [SettingsApiController::class, 'getBannerAds']);
 Route::get('get-report-reasons', [SettingsApiController::class, 'getReportReasons']);
 Route::get('faq', [SettingsApiController::class, 'getFaqs']);
 Route::get('tips', [SettingsApiController::class, 'getTips']);
