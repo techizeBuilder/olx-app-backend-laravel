@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="back" width="24" height="24" transform="translate(26 589)" fill="#00b2ca"/>
+    </clipPath>
+  </defs>
+  <g id="Storage_" data-name="Storage " transform="translate(-20 -583)">
+    <rect id="back-2" data-name="back" width="36" height="36" rx="10" transform="translate(20 583)" fill="#00b2ca" opacity="0.1"/>
+    <g id="Mask_Group_18" data-name="Mask Group 18" clip-path="url(#clip-path)">
+      <path id="folder_3102939" d="M21.25,5H10.414a.251.251,0,0,1-.177-.073L8.823,3.513A1.734,1.734,0,0,0,7.586,3H2.75A2.752,2.752,0,0,0,0,5.75v12.5A2.752,2.752,0,0,0,2.75,21h18.5A2.752,2.752,0,0,0,24,18.25V7.75A2.752,2.752,0,0,0,21.25,5ZM7,13a5,5,0,0,1,4.25-4.94v4.63L7.98,15.96A4.893,4.893,0,0,1,7,13Zm5,5a4.893,4.893,0,0,1-2.96-.98l3.49-3.49a.749.749,0,0,0,.22-.53V8.06A5,5,0,0,1,12,18Z" transform="translate(26 589)" fill="#00b2ca"/>
+    </g>
+  </g>
+</svg>

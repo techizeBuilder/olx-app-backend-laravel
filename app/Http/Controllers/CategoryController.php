@@ -56,8 +56,12 @@ class CategoryController extends Controller
         $defaultLangId = 1;
         $otherLanguages = $languages->where('id', '!=', $defaultLangId);
 
+        // A name must contain at least one letter, so pure-number/symbol garbage
+        // like "645654645645645..." is rejected.
+        $nameRegex = 'regex:/^(?=.*\p{L})[\p{L}\p{N}\s\-&\'.,()\/]+$/u';
+
         $rules = [
-            "name.$defaultLangId" => 'required|string|max:191',
+            "name.$defaultLangId" => ['required', 'string', 'min:2', 'max:100', $nameRegex],
             'image'              => 'required|mimes:jpg,jpeg,png|max:7168',
             'parent_category_id' => 'nullable|integer',
             'slug' => [
@@ -69,11 +73,17 @@ class CategoryController extends Controller
 
         foreach ($otherLanguages as $lang) {
             $langId = $lang->id;
-            $rules["name.$langId"] = 'nullable|string|max:191';
+            $rules["name.$langId"] = ['nullable', 'string', 'min:2', 'max:100', $nameRegex];
         }
 
         $request->validate($rules, [
-            'slug.regex' => 'Slug must be only English letters, numbers, hyphens (-), or underscores (_).'
+            'slug.regex' => 'Slug must be only English letters, numbers, hyphens (-), or underscores (_).',
+            "name.$defaultLangId.regex" => 'Category name must contain letters — it cannot be only numbers or symbols.',
+            "name.$defaultLangId.min" => 'Category name must be at least 2 characters.',
+            "name.$defaultLangId.max" => 'Category name cannot be longer than 100 characters.',
+            'name.*.regex' => 'Category name must contain letters — it cannot be only numbers or symbols.',
+            'name.*.min' => 'Category name must be at least 2 characters.',
+            'name.*.max' => 'Category name cannot be longer than 100 characters.',
         ]);
 
         try {
@@ -140,13 +150,14 @@ class CategoryController extends Controller
         $sort = $request->input('sort', 'sequence');
         $order = $request->input('order', 'ASC');
         $sql = Category::without('translations')->withCount('subcategories')->withCount('custom_fields')->with('subcategories');
-        if ($id == "0") {
+        if (!empty($request->search)) {
+            // Search across every level, otherwise a subcategory could never be
+            // found from a list that is restricted to a single parent.
+            $sql = $sql->search($request->search);
+        } elseif ($id == "0") {
             $sql->whereNull('parent_category_id');
         } else {
             $sql->where('parent_category_id', $id);
-        }
-        if (!empty($request->search)) {
-            $sql = $sql->search($request->search);
         }
         if ($sort !== 'advertisements_count') {
             $sql->orderBy($sort, $order);
@@ -231,8 +242,11 @@ class CategoryController extends Controller
             $defaultLangId = 1;
             $otherLanguages = $languages->where('id', '!=', $defaultLangId);
 
+            // Same guard as store(): a name must contain at least one letter.
+            $nameRegex = 'regex:/^(?=.*\p{L})[\p{L}\p{N}\s\-&\'.,()\/]+$/u';
+
             $rules = [
-                "name.$defaultLangId" => 'required|string|max:191',
+                "name.$defaultLangId" => ['required', 'string', 'min:2', 'max:100', $nameRegex],
                 'image'           => 'nullable|mimes:jpg,jpeg,png|max:7168',
                 'parent_category_id' => 'nullable|integer',
                 'slug' => [
@@ -244,11 +258,14 @@ class CategoryController extends Controller
 
             foreach ($otherLanguages as $lang) {
                 $langId = $lang->id;
-                $rules["name.$langId"] = 'nullable|string|max:191';
+                $rules["name.$langId"] = ['nullable', 'string', 'min:2', 'max:100', $nameRegex];
             }
 
             $request->validate($rules, [
-                'slug.regex' => 'Slug must be only English letters, numbers, hyphens (-), or underscores (_).'
+                'slug.regex' => 'Slug must be only English letters, numbers, hyphens (-), or underscores (_).',
+                'name.*.regex' => 'Category name must contain letters — it cannot be only numbers or symbols.',
+                'name.*.min' => 'Category name must be at least 2 characters.',
+                'name.*.max' => 'Category name cannot be longer than 100 characters.',
             ]);
 
             $category = Category::find($id);

@@ -2,9 +2,12 @@
 
 namespace App\Jobs;
 
+use Database\Seeders\AdvertisementDemoSeeder;
+use Database\Seeders\SliderDemoSeeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
 use ZipArchive;
 
@@ -18,11 +21,26 @@ class ImportDummyDataJob
         try {
             // TRUNCATE operations auto-commit in MySQL, so we don't wrap them in a transaction
             DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-            DB::table('custom_field_categories')->truncate();
-            DB::table('item_custom_field_values')->truncate();
-            DB::table('custom_fields_translations')->truncate();
-            DB::table('custom_fields')->truncate();
-            DB::table('categories')->truncate();
+
+            // Clear existing custom-field & category data before re-import.
+            // Each table is guarded so the job survives schema changes across versions.
+            foreach (['custom_field_categories', 'item_custom_field_values', 'custom_fields', 'categories'] as $table) {
+                if (Schema::hasTable($table)) {
+                    DB::table($table)->truncate();
+                }
+            }
+
+            // Translations were unified into the morph-based `translations` table in v2.12.0
+            // (the old `custom_fields_translations` table was dropped). Clear related rows.
+            if (Schema::hasTable('translations')) {
+                DB::table('translations')
+                    ->whereIn('translatable_type', ['App\\Models\\CustomField', 'App\\Models\\Category'])
+                    ->delete();
+            } elseif (Schema::hasTable('custom_fields_translations')) {
+                // Backwards-compat for pre-v2.12.0 schema
+                DB::table('custom_fields_translations')->truncate();
+            }
+
             DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
             // Delete storage directories
@@ -70,6 +88,24 @@ class ImportDummyDataJob
                 Log::info('ZIP file extracted successfully.');
             } else {
                 throw new \Exception('Failed to extract ZIP file.');
+            }
+
+            // Seed home-screen ad sliders (one per top-level category) now that
+            // categories and their images have been imported.
+            try {
+                (new SliderDemoSeeder())->run();
+                Log::info('Home sliders seeded successfully.');
+            } catch (\Throwable $sliderEx) {
+                // Don't fail the whole import if slider seeding hits an issue.
+                Log::warning('Home slider seeding failed: ' . $sliderEx->getMessage());
+            }
+
+            // Seed demo advertisements (approved item listings with real images).
+            try {
+                (new AdvertisementDemoSeeder())->run();
+                Log::info('Demo advertisements seeded successfully.');
+            } catch (\Throwable $adsEx) {
+                Log::warning('Advertisement seeding failed: ' . $adsEx->getMessage());
             }
 
             Log::info('✅ Dummy data import completed successfully.');

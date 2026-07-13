@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="back" width="24" height="24" transform="translate(26 589)" fill="#00b2ca"/>
+    </clipPath>
+  </defs>
+  <g id="Damage_" data-name="Damage " transform="translate(-20 -583)">
+    <rect id="back-2" data-name="back" width="36" height="36" rx="10" transform="translate(20 583)" fill="#00b2ca" opacity="0.1"/>
+    <g id="Mask_Group_17" data-name="Mask Group 17" clip-path="url(#clip-path)">
+      <g id="phone_812982" transform="translate(26 589)">
+        <g id="Group_4870" data-name="Group 4870">
+          <g id="Group_4869" data-name="Group 4869">
+            <path id="Path_23504" data-name="Path 23504" d="M11.5,4h1a.5.5,0,0,0,0-1h-1a.5.5,0,0,0,0,1Z" fill="#00b2ca"/>
+            <path id="Path_23505" data-name="Path 23505" d="M18,0H6A2,2,0,0,0,4,2V22a2,2,0,0,0,2,2H18a2,2,0,0,0,2-2V2A2,2,0,0,0,18,0ZM13.5,22h-3a.5.5,0,0,1,0-1h3a.5.5,0,0,1,0,1ZM18,19H6V10.527l1.247-.416,1.806,3.612a.5.5,0,0,0,.6.25l2.707-.9,1.782,1.781a.5.5,0,1,0,.707-.707l-2-2a.5.5,0,0,0-.512-.121l-2.588.863L7.947,9.276a.5.5,0,0,0-.605-.25L6,9.473V2H18Z" fill="#00b2ca"/>
+            <circle id="Ellipse_279" data-name="Ellipse 279" cx="0.5" cy="0.5" r="0.5" transform="translate(16 3)" fill="#00b2ca"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

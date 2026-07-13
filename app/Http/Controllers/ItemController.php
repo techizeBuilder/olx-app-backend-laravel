@@ -31,6 +31,27 @@ use Validator;
 
 class ItemController extends Controller
 {
+    /**
+     * A title must contain at least one letter, so pure-number/symbol garbage
+     * like "444444444444444" is rejected.
+     */
+    private const NAME_REGEX = 'regex:/^(?=.*\p{L})[\p{L}\p{N}\s\-&\'.,()\/+#%"]+$/u';
+
+    /** Upper bound for any money field — blocks values like 4.23e+92. */
+    private const MAX_AMOUNT = 999999999;
+
+    private static function nameMessages(): array
+    {
+        return [
+            'name.regex' => 'Title must contain letters — it cannot be only numbers or symbols.',
+            'name.min' => 'Title must be at least 3 characters.',
+            'name.max' => 'Title cannot be longer than 150 characters.',
+            'price.max' => 'Price is too large. Maximum allowed is ' . number_format(self::MAX_AMOUNT) . '.',
+            'min_salary.max' => 'Salary is too large. Maximum allowed is ' . number_format(self::MAX_AMOUNT) . '.',
+            'max_salary.max' => 'Salary is too large. Maximum allowed is ' . number_format(self::MAX_AMOUNT) . '.',
+        ];
+    }
+
     public function index()
     {
         ResponseService::noAnyPermissionThenRedirect(['advertisement-list', 'advertisement-update', 'advertisement-delete']);
@@ -489,9 +510,9 @@ class ItemController extends Controller
         
         try {
             $validator = Validator::make($request->all(), [
-                'name' => 'required|string|max:255',
+                'name' => ['required', 'string', 'min:3', 'max:150', self::NAME_REGEX],
                 'slug' => 'nullable|regex:/^[a-z0-9-]+$/',
-                'description' => 'nullable|string',
+                'description' => 'nullable|string|max:5000',
                 'latitude' => 'nullable',
                 'longitude' => 'nullable',
                 'address' => 'nullable',
@@ -503,7 +524,7 @@ class ItemController extends Controller
                 'delete_item_image_id' => 'nullable|array',
                 'admin_edit_reason' => 'required|string|max:1000',
                 'currency_id' => 'nullable|exists:currencies,id',
-            ]);
+            ], self::nameMessages());
 
             if ($validator->fails()) {
                 $errorMessage = $validator->errors()->first();
@@ -526,14 +547,14 @@ class ItemController extends Controller
                 if ($isPriceOptional) {
                     // Both job category AND price optional: salary is optional
                     $validationRules = [
-                        'min_salary' => 'nullable|numeric|min:0',
-                        'max_salary' => 'nullable|numeric|gte:min_salary',
+                        'min_salary' => 'nullable|numeric|min:0|max:' . self::MAX_AMOUNT,
+                        'max_salary' => 'nullable|numeric|gte:min_salary|max:' . self::MAX_AMOUNT,
                     ];
                 } else {
                     // Job category but price not optional: salary is required
                     $validationRules = [
-                        'min_salary' => 'required|numeric|min:0',
-                        'max_salary' => 'required|numeric|gte:min_salary',
+                        'min_salary' => 'required|numeric|min:0|max:' . self::MAX_AMOUNT,
+                        'max_salary' => 'required|numeric|gte:min_salary|max:' . self::MAX_AMOUNT,
                     ];
                 }
             } else {
@@ -541,12 +562,12 @@ class ItemController extends Controller
                 if ($isPriceOptional) {
                     // Price optional: price is optional
                     $validationRules = [
-                        'price' => 'nullable|numeric|min:0',
+                        'price' => 'nullable|numeric|min:0|max:' . self::MAX_AMOUNT,
                     ];
                 } else {
                     // Price not optional: price is required
                     $validationRules = [
-                        'price' => 'required|numeric|min:0',
+                        'price' => 'required|numeric|min:0|max:' . self::MAX_AMOUNT,
                     ];
                 }
             }
@@ -1053,9 +1074,9 @@ class ItemController extends Controller
         ResponseService::noPermissionThenSendJson('advertisement-create');
 
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
+            'name' => ['required', 'string', 'min:3', 'max:150', self::NAME_REGEX],
             'slug' => 'nullable|regex:/^[a-z0-9-]+$/',
-            'description' => 'required|string',
+            'description' => 'required|string|max:5000',
             'latitude' => 'required',
             'longitude' => 'required',
             'address' => 'nullable',
@@ -1068,7 +1089,7 @@ class ItemController extends Controller
             'video_link' => 'nullable|url',
             'category_id' => 'required|integer',
             'currency_id' => 'nullable|integer',
-        ]);
+        ], self::nameMessages());
 
         if ($validator->fails()) {
             $errorMessage = $validator->errors()->first();
@@ -1097,14 +1118,14 @@ class ItemController extends Controller
                 if ($isPriceOptional) {
                     // Both job category AND price optional: salary is optional
                     $validationRules = [
-                        'min_salary' => 'nullable|numeric|min:0',
-                        'max_salary' => 'nullable|numeric|gte:min_salary',
+                        'min_salary' => 'nullable|numeric|min:0|max:' . self::MAX_AMOUNT,
+                        'max_salary' => 'nullable|numeric|gte:min_salary|max:' . self::MAX_AMOUNT,
                     ];
                 } else {
                     // Job category but price not optional: salary is required
                     $validationRules = [
-                        'min_salary' => 'required|numeric|min:0',
-                        'max_salary' => 'required|numeric|gte:min_salary',
+                        'min_salary' => 'required|numeric|min:0|max:' . self::MAX_AMOUNT,
+                        'max_salary' => 'required|numeric|gte:min_salary|max:' . self::MAX_AMOUNT,
                     ];
                 }
             } else {
@@ -1112,12 +1133,12 @@ class ItemController extends Controller
                 if ($isPriceOptional) {
                     // Price optional: price is optional
                     $validationRules = [
-                        'price' => 'nullable|numeric|min:0',
+                        'price' => 'nullable|numeric|min:0|max:' . self::MAX_AMOUNT,
                     ];
                 } else {
                     // Price not optional: price is required
                     $validationRules = [
-                        'price' => 'required|numeric|min:0',
+                        'price' => 'required|numeric|min:0|max:' . self::MAX_AMOUNT,
                     ];
                 }
             }

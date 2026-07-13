@@ -144,6 +144,13 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="row mt-2">
+                                <div class="col-12 d-flex justify-content-end">
+                                    <button type="button" class="btn btn-outline-secondary btn-sm" id="btn-clear-filters">
+                                        <i class="fas fa-times me-1"></i>{{ __('Clear Filters') }}
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                         <div class="table-responsive">
 
@@ -1020,6 +1027,26 @@
             // Show/hide rejection reason dynamically
             $('#bulk_status_select').on('change', function() {
                 updateBulkReasonVisibility();
+            });
+
+            // Reset every filter control back to "All" and reload the table.
+            $('#btn-clear-filters').on('click', function() {
+                $('#p_category, #filter, #filter_featured_premium, #filter_country_item_test, #filter_state_item, #filter_city_item')
+                    .val('')
+                    .trigger('change.select2');
+
+                // State and City are populated from the selected country — empty them out.
+                $('#filter_state_item, #filter_city_item')
+                    .html('<option value="">{{ __('All') }}</option>');
+
+                // Clear the table's own search box too.
+                $('#table_list').closest('.bootstrap-table').find('.search input').val('');
+
+                $('#table_list').bootstrapTable('refresh', {
+                    query: {
+                        search: ''
+                    }
+                });
             });
 
             // Guard flag: when we programmatically call uncheckAll() it fires 'uncheck-all.bs.table'.

@@ -80,6 +80,10 @@
     <script>
         function successFunction() {
             $('.permission-tree').jstree(true).deselect_all();
+            // Send the user back to the roles list once the success toast has shown.
+            setTimeout(function () {
+                window.location.href = "{{ route('roles.index') }}";
+            }, 1000);
         }
     </script>
 @endsection

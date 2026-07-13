@@ -1,0 +1,233 @@
+[2026-07-08 06:22:24] local.INFO: 🚀 Dummy data import started.  
+[2026-07-08 06:22:31] local.INFO: ZIP file extracted successfully.  
+[2026-07-08 06:22:31] local.INFO: ✅ Dummy data import completed successfully.  
+[2026-07-08 07:00:52] local.INFO: 🚀 Dummy data import started.  
+[2026-07-08 07:00:58] local.INFO: ZIP file extracted successfully.  
+[2026-07-08 07:00:58] local.INFO: Home sliders seeded successfully.  
+[2026-07-08 07:00:58] local.INFO: ✅ Dummy data import completed successfully.  
+[2026-07-08 07:13:48] local.ERROR: rename(C:\wamp64\www\OLX\bootstrap\cache\pac87FA.tmp,C:\wamp64\www\OLX\bootstrap\cache/packages.php): Access is denied (code: 5) {"exception":"[object] (ErrorException(code: 0): rename(C:\\wamp64\\www\\OLX\\bootstrap\\cache\\pac87FA.tmp,C:\\wamp64\\www\\OLX\\bootstrap\\cache/packages.php): Access is denied (code: 5) at C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:233)
+[stacktrace]
+#0 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(255): Illuminate/Foundation/Bootstrap/HandleExceptions->handleError(2, 'rename(C://wamp6...', 'C://wamp64//www//O...', 233)
+#1 [internal function]: Illuminate/Foundation/Bootstrap/HandleExceptions->Illuminate/Foundation/Bootstrap/{closure}(2, 'rename(C://wamp6...', 'C://wamp64//www//O...', 233)
+#2 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(233): rename('C://wamp64//www//O...', 'C://wamp64//www//O...')
+#3 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(181): Illuminate/Filesystem/Filesystem->replace('C://wamp64//www//O...', '<?php return ar...')
+#4 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(131): Illuminate/Foundation/PackageManifest->write(Array)
+#5 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(107): Illuminate/Foundation/PackageManifest->build()
+#6 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(90): Illuminate/Foundation/PackageManifest->getManifest()
+#7 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(79): Illuminate/Foundation/PackageManifest->config('aliases')
+#8 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate/Foundation/PackageManifest->aliases()
+#9 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(286): Illuminate/Foundation/Bootstrap/RegisterFacades->bootstrap(Object(Illuminate/Foundation/Application))
+#10 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(447): Illuminate/Foundation/Application->bootstrapWith(Array)
+#11 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(199): Illuminate/Foundation/Console/Kernel->bootstrap()
+#12 Command line code(1): Illuminate/Foundation/Console/Kernel->handle(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#13 {main}
+"} 
+[2026-07-08 07:13:48] local.ERROR: Uncaught ReflectionException: Class "view" does not exist in C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php:912
+Stack trace:
+#0 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php(912): ReflectionClass->__construct('view')
+#1 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php(795): Illuminate\Container\Container->build('view')
+#2 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(986): Illuminate\Container\Container->resolve('view', Array, true)
+#3 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php(731): Illuminate\Foundation\Application->resolve('view', Array)
+#4 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(971): Illuminate\Container\Container->make('view', Array)
+#5 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(120): Illuminate\Foundation\Application->make('view', Array)
+#6 Command line code(1): app('view')
+#7 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [view] does not exist. in C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php:914
+Stack trace:
+#0 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php(795): Illuminate\Container\Container->build('view')
+#1 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(986): Illuminate\Container\Container->resolve('view', Array, true)
+#2 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php(731): Illuminate\Foundation\Application->resolve('view', Array)
+#3 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(971): Illuminate\Container\Container->make('view', Array)
+#4 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(120): Illuminate\Foundation\Application->make('view', Array)
+#5 Command line code(1): app('view')
+#6 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught ReflectionException: Class \"view\" does not exist in C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php:912
+Stack trace:
+#0 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(912): ReflectionClass->__construct('view')
+#1 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(795): Illuminate\\Container\\Container->build('view')
+#2 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(986): Illuminate\\Container\\Container->resolve('view', Array, true)
+#3 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(731): Illuminate\\Foundation\\Application->resolve('view', Array)
+#4 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(971): Illuminate\\Container\\Container->make('view', Array)
+#5 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(120): Illuminate\\Foundation\\Application->make('view', Array)
+#6 Command line code(1): app('view')
+#7 {main}
+
+Next Illuminate\\Contracts\\Container\\BindingResolutionException: Target class [view] does not exist. in C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php:914
+Stack trace:
+#0 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(795): Illuminate\\Container\\Container->build('view')
+#1 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(986): Illuminate\\Container\\Container->resolve('view', Array, true)
+#2 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(731): Illuminate\\Foundation\\Application->resolve('view', Array)
+#3 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(971): Illuminate\\Container\\Container->make('view', Array)
+#4 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(120): Illuminate\\Foundation\\Application->make('view', Array)
+#5 Command line code(1): app('view')
+#6 {main}
+  thrown at C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Container/Container.php:914)
+[stacktrace]
+#0 {main}
+"} 
+[2026-07-11 06:12:34] local.ERROR: rename(C:\wamp64\www\OLX\bootstrap\cache\pacDEAA.tmp,C:\wamp64\www\OLX\bootstrap\cache/packages.php): Access is denied (code: 5) {"exception":"[object] (ErrorException(code: 0): rename(C:\\wamp64\\www\\OLX\\bootstrap\\cache\\pacDEAA.tmp,C:\\wamp64\\www\\OLX\\bootstrap\\cache/packages.php): Access is denied (code: 5) at C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:233)
+[stacktrace]
+#0 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(255): Illuminate/Foundation/Bootstrap/HandleExceptions->handleError(2, 'rename(C://wamp6...', 'C://wamp64//www//O...', 233)
+#1 [internal function]: Illuminate/Foundation/Bootstrap/HandleExceptions->Illuminate/Foundation/Bootstrap/{closure}(2, 'rename(C://wamp6...', 'C://wamp64//www//O...', 233)
+#2 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(233): rename('C://wamp64//www//O...', 'C://wamp64//www//O...')
+#3 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(181): Illuminate/Filesystem/Filesystem->replace('C://wamp64//www//O...', '<?php return ar...')
+#4 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(131): Illuminate/Foundation/PackageManifest->write(Array)
+#5 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(107): Illuminate/Foundation/PackageManifest->build()
+#6 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(90): Illuminate/Foundation/PackageManifest->getManifest()
+#7 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(79): Illuminate/Foundation/PackageManifest->config('aliases')
+#8 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate/Foundation/PackageManifest->aliases()
+#9 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(286): Illuminate/Foundation/Bootstrap/RegisterFacades->bootstrap(Object(Illuminate/Foundation/Application))
+#10 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(447): Illuminate/Foundation/Application->bootstrapWith(Array)
+#11 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(199): Illuminate/Foundation/Console/Kernel->bootstrap()
+#12 Command line code(1): Illuminate/Foundation/Console/Kernel->handle(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#13 {main}
+"} 
+[2026-07-11 06:12:35] local.ERROR: Uncaught ReflectionException: Class "view" does not exist in C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php:912
+Stack trace:
+#0 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php(912): ReflectionClass->__construct('view')
+#1 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php(795): Illuminate\Container\Container->build('view')
+#2 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(986): Illuminate\Container\Container->resolve('view', Array, true)
+#3 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php(731): Illuminate\Foundation\Application->resolve('view', Array)
+#4 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(971): Illuminate\Container\Container->make('view', Array)
+#5 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(120): Illuminate\Foundation\Application->make('view', Array)
+#6 Command line code(1): app('view')
+#7 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [view] does not exist. in C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php:914
+Stack trace:
+#0 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php(795): Illuminate\Container\Container->build('view')
+#1 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(986): Illuminate\Container\Container->resolve('view', Array, true)
+#2 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php(731): Illuminate\Foundation\Application->resolve('view', Array)
+#3 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(971): Illuminate\Container\Container->make('view', Array)
+#4 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(120): Illuminate\Foundation\Application->make('view', Array)
+#5 Command line code(1): app('view')
+#6 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught ReflectionException: Class \"view\" does not exist in C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php:912
+Stack trace:
+#0 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(912): ReflectionClass->__construct('view')
+#1 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(795): Illuminate\\Container\\Container->build('view')
+#2 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(986): Illuminate\\Container\\Container->resolve('view', Array, true)
+#3 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(731): Illuminate\\Foundation\\Application->resolve('view', Array)
+#4 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(971): Illuminate\\Container\\Container->make('view', Array)
+#5 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(120): Illuminate\\Foundation\\Application->make('view', Array)
+#6 Command line code(1): app('view')
+#7 {main}
+
+Next Illuminate\\Contracts\\Container\\BindingResolutionException: Target class [view] does not exist. in C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php:914
+Stack trace:
+#0 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(795): Illuminate\\Container\\Container->build('view')
+#1 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(986): Illuminate\\Container\\Container->resolve('view', Array, true)
+#2 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(731): Illuminate\\Foundation\\Application->resolve('view', Array)
+#3 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(971): Illuminate\\Container\\Container->make('view', Array)
+#4 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(120): Illuminate\\Foundation\\Application->make('view', Array)
+#5 Command line code(1): app('view')
+#6 {main}
+  thrown at C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Container/Container.php:914)
+[stacktrace]
+#0 {main}
+"} 
+[2026-07-11 06:29:05] local.ERROR: rename(C:\wamp64\www\OLX\bootstrap\cache\serFC3A.tmp,C:\wamp64\www\OLX\bootstrap\cache\services.php): Access is denied (code: 5) {"exception":"[object] (ErrorException(code: 0): rename(C:\\wamp64\\www\\OLX\\bootstrap\\cache\\serFC3A.tmp,C:\\wamp64\\www\\OLX\\bootstrap\\cache\\services.php): Access is denied (code: 5) at C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:233)
+[stacktrace]
+#0 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(255): Illuminate/Foundation/Bootstrap/HandleExceptions->handleError(2, 'rename(C://wamp6...', 'C://wamp64//www//O...', 233)
+#1 [internal function]: Illuminate/Foundation/Bootstrap/HandleExceptions->Illuminate/Foundation/Bootstrap/{closure}(2, 'rename(C://wamp6...', 'C://wamp64//www//O...', 233)
+#2 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(233): rename('C://wamp64//www//O...', 'C://wamp64//www//O...')
+#3 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(191): Illuminate/Filesystem/Filesystem->replace('C://wamp64//www//O...', '<?php return ar...')
+#4 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(163): Illuminate/Foundation/ProviderRepository->writeManifest(Array)
+#5 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(61): Illuminate/Foundation/ProviderRepository->compileManifest(Array)
+#6 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(794): Illuminate/Foundation/ProviderRepository->load(Array)
+#7 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate/Foundation/Application->registerConfiguredProviders()
+#8 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(286): Illuminate/Foundation/Bootstrap/RegisterProviders->bootstrap(Object(Illuminate/Foundation/Application))
+#9 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(447): Illuminate/Foundation/Application->bootstrapWith(Array)
+#10 C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(199): Illuminate/Foundation/Console/Kernel->bootstrap()
+#11 Command line code(1): Illuminate/Foundation/Console/Kernel->handle(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#12 {main}
+"} 
+[2026-07-11 06:29:05] local.ERROR: Uncaught ReflectionException: Class "view" does not exist in C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php:912
+Stack trace:
+#0 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php(912): ReflectionClass->__construct('view')
+#1 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php(795): Illuminate\Container\Container->build('view')
+#2 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(986): Illuminate\Container\Container->resolve('view', Array, true)
+#3 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php(731): Illuminate\Foundation\Application->resolve('view', Array)
+#4 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(971): Illuminate\Container\Container->make('view', Array)
+#5 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(120): Illuminate\Foundation\Application->make('view', Array)
+#6 Command line code(1): app('view')
+#7 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [view] does not exist. in C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php:914
+Stack trace:
+#0 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php(795): Illuminate\Container\Container->build('view')
+#1 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(986): Illuminate\Container\Container->resolve('view', Array, true)
+#2 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php(731): Illuminate\Foundation\Application->resolve('view', Array)
+#3 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(971): Illuminate\Container\Container->make('view', Array)
+#4 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(120): Illuminate\Foundation\Application->make('view', Array)
+#5 Command line code(1): app('view')
+#6 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught ReflectionException: Class \"view\" does not exist in C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php:912
+Stack trace:
+#0 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(912): ReflectionClass->__construct('view')
+#1 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(795): Illuminate\\Container\\Container->build('view')
+#2 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(986): Illuminate\\Container\\Container->resolve('view', Array, true)
+#3 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(731): Illuminate\\Foundation\\Application->resolve('view', Array)
+#4 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(971): Illuminate\\Container\\Container->make('view', Array)
+#5 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(120): Illuminate\\Foundation\\Application->make('view', Array)
+#6 Command line code(1): app('view')
+#7 {main}
+
+Next Illuminate\\Contracts\\Container\\BindingResolutionException: Target class [view] does not exist. in C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php:914
+Stack trace:
+#0 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(795): Illuminate\\Container\\Container->build('view')
+#1 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(986): Illuminate\\Container\\Container->resolve('view', Array, true)
+#2 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(731): Illuminate\\Foundation\\Application->resolve('view', Array)
+#3 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(971): Illuminate\\Container\\Container->make('view', Array)
+#4 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(120): Illuminate\\Foundation\\Application->make('view', Array)
+#5 Command line code(1): app('view')
+#6 {main}
+  thrown at C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Container/Container.php:914)
+[stacktrace]
+#0 {main}
+"} 
+[2026-07-11 06:29:05] local.ERROR: Uncaught ReflectionException: Class "view" does not exist in C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php:912
+Stack trace:
+#0 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php(912): ReflectionClass->__construct('view')
+#1 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php(795): Illuminate\Container\Container->build('view')
+#2 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(986): Illuminate\Container\Container->resolve('view', Array, true)
+#3 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php(731): Illuminate\Foundation\Application->resolve('view', Array)
+#4 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(971): Illuminate\Container\Container->make('view', Array)
+#5 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(120): Illuminate\Foundation\Application->make('view', Array)
+#6 Command line code(1): app('view')
+#7 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [view] does not exist. in C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php:914
+Stack trace:
+#0 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php(795): Illuminate\Container\Container->build('view')
+#1 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(986): Illuminate\Container\Container->resolve('view', Array, true)
+#2 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Container\Container.php(731): Illuminate\Foundation\Application->resolve('view', Array)
+#3 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(971): Illuminate\Container\Container->make('view', Array)
+#4 C:\wamp64\www\OLX\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(120): Illuminate\Foundation\Application->make('view', Array)
+#5 Command line code(1): app('view')
+#6 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught ReflectionException: Class \"view\" does not exist in C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php:912
+Stack trace:
+#0 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(912): ReflectionClass->__construct('view')
+#1 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(795): Illuminate\\Container\\Container->build('view')
+#2 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(986): Illuminate\\Container\\Container->resolve('view', Array, true)
+#3 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(731): Illuminate\\Foundation\\Application->resolve('view', Array)
+#4 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(971): Illuminate\\Container\\Container->make('view', Array)
+#5 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(120): Illuminate\\Foundation\\Application->make('view', Array)
+#6 Command line code(1): app('view')
+#7 {main}
+
+Next Illuminate\\Contracts\\Container\\BindingResolutionException: Target class [view] does not exist. in C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php:914
+Stack trace:
+#0 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(795): Illuminate\\Container\\Container->build('view')
+#1 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(986): Illuminate\\Container\\Container->resolve('view', Array, true)
+#2 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(731): Illuminate\\Foundation\\Application->resolve('view', Array)
+#3 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(971): Illuminate\\Container\\Container->make('view', Array)
+#4 C:\\wamp64\\www\\OLX\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(120): Illuminate\\Foundation\\Application->make('view', Array)
+#5 Command line code(1): app('view')
+#6 {main}
+  thrown at C:/wamp64/www/OLX/vendor/laravel/framework/src/Illuminate/Container/Container.php:914)
+[stacktrace]
+#0 {main}
+"} 

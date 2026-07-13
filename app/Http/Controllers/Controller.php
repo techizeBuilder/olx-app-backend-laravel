@@ -29,7 +29,9 @@ class Controller extends BaseController
                 'table'  => 'required|string',
                 'column' => 'nullable',
             ]);
-            $column = $request->column ?? "sequence";
+            // The table sends an empty string when data-reorder-column is absent, and
+            // `??` only falls back on null — so check for empty, not just null.
+            $column = ! empty($request->column) ? $request->column : "sequence";
 
             $data = [];
             foreach ($request->data as $index => $row) {
@@ -75,7 +77,8 @@ class Controller extends BaseController
                     ResponseService::noPermissionThenSendJson('tip-update');
                     break;
             }
-            $column = $request->column ?? "status";
+            // Same guard as changeRowOrder(): an absent data-status-column arrives as "".
+            $column = ! empty($request->column) ? $request->column : "status";
 
             //Special case for deleted_at column
             if ($column == "deleted_at") {

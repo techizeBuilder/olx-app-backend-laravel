@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="back" width="24" height="24" transform="translate(306.348 431.348)" fill="#00b2ca"/>
+    </clipPath>
+  </defs>
+  <g id="Color" transform="translate(-300.348 -425.348)">
+    <rect id="back-2" data-name="back" width="36" height="36" rx="10" transform="translate(300.348 425.348)" fill="#00b2ca" opacity="0.1"/>
+    <g id="Mask_Group_15" data-name="Mask Group 15" clip-path="url(#clip-path)">
+      <g id="color-palette_1825880" transform="translate(306.566 431.348)">
+        <path id="Path_23491" data-name="Path 23491" d="M9.867,12.8v4.1l1.371-3.573Zm0,0" fill="#00b2ca"/>
+        <path id="Path_23492" data-name="Path 23492" d="M9.867,6.777V11.3l1.875.72,1.512-3.938Zm0,0" fill="#00b2ca"/>
+        <path id="Path_23493" data-name="Path 23493" d="M14.614,2.574,9.867.751V5.27l3.891,1.494,1.26-3.282a.7.7,0,0,0-.4-.908Zm0,0" fill="#00b2ca"/>
+        <path id="Path_23494" data-name="Path 23494" d="M10.524,19.109l2.56-2.843-1.091-.983Zm0,0" fill="#00b2ca"/>
+        <path id="Path_23495" data-name="Path 23495" d="M14.152,9.658l-1.619,4.219,1.492,1.344,2.823-3.135Zm0,0" fill="#00b2ca"/>
+        <path id="Path_23496" data-name="Path 23496" d="M20.089,7.435l-3.778-3.4L14.692,8.252l3.1,2.789,2.353-2.613a.7.7,0,0,0-.052-.993Zm0,0" fill="#00b2ca"/>
+        <path id="Path_23497" data-name="Path 23497" d="M10.349,21.4l3.409-1.737-.667-1.309Zm0,0" fill="#00b2ca"/>
+        <path id="Path_23498" data-name="Path 23498" d="M14.1,17.239l.912,1.79,3.759-1.915-1.647-3.233Zm0,0" fill="#00b2ca"/>
+        <path id="Path_23499" data-name="Path 23499" d="M23.463,13.934,21.155,9.4l-3.024,3.358,1.892,3.714,3.132-1.6a.7.7,0,0,0,.307-.946Zm0,0" fill="#00b2ca"/>
+        <path id="Path_23500" data-name="Path 23500" d="M7.758,0H.727a.7.7,0,0,0-.7.7V19.781a4.219,4.219,0,0,0,8.438,0V.7A.7.7,0,0,0,7.758,0ZM5.122,20.474a1.173,1.173,0,1,1,.343-.828A1.173,1.173,0,0,1,5.122,20.474Zm0,0" fill="#00b2ca"/>
+      </g>
+    </g>
+  </g>
+</svg>

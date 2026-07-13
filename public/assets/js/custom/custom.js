@@ -1118,7 +1118,7 @@ $('#verification_status').change(function () {
 function customValidation() {
     let item = $("select[name=item]").val();
     let category = $("select[name=category_id]").val();
-    let link = $("input[name=link]").val();
+    let link = $.trim($("input[name=link]").val());
     if (item == "" && category == "" && link == "") {
         // Display an error message
         $('.invalid-form-error-message').html("Please select either Item, Category, or Add Link").addClass("text-danger");
@@ -1134,6 +1134,48 @@ function customValidation() {
 
     return true;
 }
+
+// Slider form: Item, Category and Third Party Link are mutually exclusive.
+// Picking one clears the other two, so the form can never end up stuck on the
+// "select only one field" error with no way to undo the extra selection.
+$(function () {
+    let sliderForm = $('#slider-form');
+    if (!sliderForm.length) {
+        return;
+    }
+
+    let itemSelect = sliderForm.find('select[name=item]');       // select2
+    let categorySelect = sliderForm.find('select[name=category_id]'); // plain select
+    let linkInput = sliderForm.find('input[name=link]');
+
+    function clearSliderError() {
+        $('.invalid-form-error-message').html('');
+    }
+
+    itemSelect.on('change', function () {
+        if ($(this).val() !== '') {
+            categorySelect.val('');
+            linkInput.val('');
+            clearSliderError();
+        }
+    });
+
+    categorySelect.on('change', function () {
+        if ($(this).val() !== '') {
+            itemSelect.val('').trigger('change.select2');
+            linkInput.val('');
+            clearSliderError();
+        }
+    });
+
+    linkInput.on('input', function () {
+        if ($.trim($(this).val()) !== '') {
+            itemSelect.val('').trigger('change.select2');
+            categorySelect.val('');
+            clearSliderError();
+        }
+    });
+});
 $(function () {
     $(".sortable").sortable({
         revert: true,

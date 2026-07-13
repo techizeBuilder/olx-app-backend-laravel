@@ -250,10 +250,21 @@
         // Initialize map with default coordinates
         const map = window.mapUtils.initializeMap('map', 0, 0);
 
+        // Remember which area row the user is working on, so the map fills that row
+        // instead of always overwriting the last one.
+        let $activeAreaGroup = null;
+        $(document).on('focus click', '.area-input-group :input', function () {
+            $activeAreaGroup = $(this).closest('.area-input-group');
+            $('.area-input-group').removeClass('border-primary');
+            $activeAreaGroup.addClass('border-primary');
+        });
+
         // Function to update area coordinates
         window.updateAreaCoordinates = function(lat, lng) {
-            // Get the last area input group (the one being edited)
-            const $areaGroup = $('.area-input-group').last();
+            // Fall back to the last row when the user has not picked one yet.
+            const $areaGroup = ($activeAreaGroup && $activeAreaGroup.length && $.contains(document, $activeAreaGroup[0]))
+                ? $activeAreaGroup
+                : $('.area-input-group').last();
 
             // Update latitude and longitude fields
             $areaGroup.find('input[name="latitude[]"]').val(lat);

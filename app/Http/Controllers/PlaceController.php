@@ -382,13 +382,48 @@ class PlaceController extends Controller
     public function addArea(Request $request)
     {
         ResponseService::noPermissionThenRedirect('area-create');
+
+        // Drop area rows the user added but left completely blank, so an unused
+        // extra row doesn't block the whole submission.
+        $names      = (array) $request->input('name', []);
+        $latitudes  = (array) $request->input('latitude', []);
+        $longitudes = (array) $request->input('longitude', []);
+
+        $keep = array_values(array_filter(array_keys($names), static function ($i) use ($names, $latitudes, $longitudes) {
+            return trim((string) ($names[$i] ?? '')) !== ''
+                || trim((string) ($latitudes[$i] ?? '')) !== ''
+                || trim((string) ($longitudes[$i] ?? '')) !== '';
+        }));
+
+        $request->merge([
+            'name'      => array_values(array_map(static fn($i) => $names[$i] ?? null, $keep)),
+            'latitude'  => array_values(array_map(static fn($i) => $latitudes[$i] ?? null, $keep)),
+            'longitude' => array_values(array_map(static fn($i) => $longitudes[$i] ?? null, $keep)),
+        ]);
+
         $validator = Validator::make($request->all(), [
-            'name.*' => 'required|string',
+            // Guard the array itself, otherwise a missing `name` slips past `name.*`
+            // and blows up in the foreach below.
+            'name' => 'required|array|min:1',
+            // Must contain at least one letter — blocks pure-number/symbol garbage.
+            'name.*' => ['required', 'string', 'min:2', 'max:100', 'regex:/^(?=.*\p{L})[\p{L}\p{N}\s\-&\'.,()\/]+$/u'],
             'country_id' => 'required|exists:countries,id',
             'state_id' => 'required|exists:states,id',
             'city_id' => 'required|exists:cities,id',
-            'latitude.*' => 'nullable|numeric',
-            'longitude.*' => 'nullable|numeric',
+            // latitude is decimal(10,8) and longitude decimal(11,8) — keep values in
+            // real-world range so MySQL never silently clamps them.
+            'latitude.*' => 'nullable|numeric|between:-90,90',
+            'longitude.*' => 'nullable|numeric|between:-180,180',
+        ], [
+            'name.required' => 'Please add at least one area.',
+            'name.*.required' => 'Area name is required — remove any empty area rows.',
+            'name.*.regex' => 'Area name must contain letters — it cannot be only numbers or symbols.',
+            'name.*.min' => 'Area name must be at least 2 characters.',
+            'country_id.required' => 'Please select a Country.',
+            'state_id.required' => 'Please select a State.',
+            'city_id.required' => 'Please select a City.',
+            'latitude.*.between' => 'Latitude must be between -90 and 90.',
+            'longitude.*.between' => 'Longitude must be between -180 and 180.',
         ]);
         if ($validator->fails()) {
             ResponseService::validationError($validator->errors()->first());

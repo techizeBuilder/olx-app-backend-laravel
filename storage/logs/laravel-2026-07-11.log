@@ -1,0 +1,834 @@
+[2026-07-11 05:38:14] local.INFO: Detected N+1 Query  
+[2026-07-11 05:38:14] local.INFO: Model: App\Models\Category
+Relation: App\Models\Item
+Num-Called: 85
+Call-Stack:
+#14 \vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:23
+#15 \vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:52
+#17 \app\Models\Category.php:85
+#23 \app\Http\Controllers\CategoryController.php:189
+#24 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#25 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#26 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#27 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#28 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#29 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#30 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#31 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#32 \app\Http\Middleware\DemoMiddleware.php:34
+#33 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#34 \app\Http\Middleware\PreventBackHistory.php:12
+#35 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#36 \app\Http\Middleware\LanguageManager.php:58
+#37 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#38 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+#39 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#40 \vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php:57
+#41 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#42 \vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php:78
+#43 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#44 \vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php:49
+#45 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#46 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:121
+#47 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:64
+#48 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#49 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php:37
+  
+[2026-07-11 05:38:14] local.INFO: Model: App\Models\Category
+Relation: App\Models\Category
+Num-Called: 85
+Call-Stack:
+#11 \vendor\staudenmeir\laravel-adjacency-list\src\Eloquent\Traits\BuildsAdjacencyListQueries.php:26
+#14 \app\Models\Category.php:90
+#20 \app\Http\Controllers\CategoryController.php:189
+#21 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#22 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#23 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#24 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#25 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#26 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#27 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#28 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#29 \app\Http\Middleware\DemoMiddleware.php:34
+#30 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#31 \app\Http\Middleware\PreventBackHistory.php:12
+#32 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#33 \app\Http\Middleware\LanguageManager.php:58
+#34 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#35 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+#36 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#37 \vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php:57
+#38 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#39 \vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php:78
+#40 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#41 \vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php:49
+#42 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#43 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:121
+#44 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:64
+#45 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#46 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php:37
+#47 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#48 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\EncryptCookies.php:67
+#49 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+  
+[2026-07-11 06:31:55] local.INFO: Detected N+1 Query  
+[2026-07-11 06:31:56] local.INFO: Model: App\Models\Category
+Relation: App\Models\Item
+Num-Called: 85
+Call-Stack:
+#14 \vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:23
+#15 \vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:52
+#17 \app\Models\Category.php:85
+#23 \app\Http\Controllers\CategoryController.php:200
+#24 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#25 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#26 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#27 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#28 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#29 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#30 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#31 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#32 \app\Http\Middleware\DemoMiddleware.php:34
+#33 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#34 \app\Http\Middleware\PreventBackHistory.php:12
+#35 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#36 \app\Http\Middleware\LanguageManager.php:58
+#37 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#38 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+#39 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#40 \vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php:57
+#41 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#42 \vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php:78
+#43 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#44 \vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php:49
+#45 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#46 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:121
+#47 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:64
+#48 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#49 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php:37
+  
+[2026-07-11 06:31:56] local.INFO: Model: App\Models\Category
+Relation: App\Models\Category
+Num-Called: 85
+Call-Stack:
+#11 \vendor\staudenmeir\laravel-adjacency-list\src\Eloquent\Traits\BuildsAdjacencyListQueries.php:26
+#14 \app\Models\Category.php:90
+#20 \app\Http\Controllers\CategoryController.php:200
+#21 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#22 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#23 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#24 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#25 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#26 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#27 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#28 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#29 \app\Http\Middleware\DemoMiddleware.php:34
+#30 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#31 \app\Http\Middleware\PreventBackHistory.php:12
+#32 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#33 \app\Http\Middleware\LanguageManager.php:58
+#34 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#35 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+#36 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#37 \vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php:57
+#38 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#39 \vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php:78
+#40 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#41 \vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php:49
+#42 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#43 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:121
+#44 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:64
+#45 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#46 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php:37
+#47 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#48 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\EncryptCookies.php:67
+#49 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+  
+[2026-07-11 06:32:58] local.INFO: Detected N+1 Query  
+[2026-07-11 06:32:58] local.INFO: Model: App\Models\Category
+Relation: App\Models\Item
+Num-Called: 85
+Call-Stack:
+#14 \vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:23
+#15 \vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:52
+#17 \app\Models\Category.php:85
+#23 \app\Http\Controllers\CategoryController.php:200
+#24 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#25 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#26 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#27 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#28 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#29 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#30 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#31 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#32 \app\Http\Middleware\DemoMiddleware.php:34
+#33 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#34 \app\Http\Middleware\PreventBackHistory.php:12
+#35 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#36 \app\Http\Middleware\LanguageManager.php:58
+#37 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#38 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+#39 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#40 \vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php:57
+#41 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#42 \vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php:78
+#43 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#44 \vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php:49
+#45 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#46 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:121
+#47 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:64
+#48 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#49 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php:37
+  
+[2026-07-11 06:32:58] local.INFO: Model: App\Models\Category
+Relation: App\Models\Category
+Num-Called: 85
+Call-Stack:
+#11 \vendor\staudenmeir\laravel-adjacency-list\src\Eloquent\Traits\BuildsAdjacencyListQueries.php:26
+#14 \app\Models\Category.php:90
+#20 \app\Http\Controllers\CategoryController.php:200
+#21 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#22 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#23 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#24 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#25 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#26 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#27 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#28 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#29 \app\Http\Middleware\DemoMiddleware.php:34
+#30 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#31 \app\Http\Middleware\PreventBackHistory.php:12
+#32 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#33 \app\Http\Middleware\LanguageManager.php:58
+#34 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#35 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+#36 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#37 \vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php:57
+#38 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#39 \vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php:78
+#40 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#41 \vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php:49
+#42 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#43 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:121
+#44 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:64
+#45 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#46 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php:37
+#47 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#48 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\EncryptCookies.php:67
+#49 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+  
+[2026-07-11 06:52:21] local.INFO: Detected N+1 Query  
+[2026-07-11 06:52:21] local.INFO: Model: App\Models\Category
+Relation: App\Models\Item
+Num-Called: 85
+Call-Stack:
+#14 \vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:23
+#15 \vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:52
+#17 \app\Models\Category.php:85
+#23 \app\Http\Controllers\CategoryController.php:200
+#24 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#25 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#26 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#27 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#28 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#29 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#30 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#31 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#32 \app\Http\Middleware\DemoMiddleware.php:34
+#33 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#34 \app\Http\Middleware\PreventBackHistory.php:12
+#35 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#36 \app\Http\Middleware\LanguageManager.php:58
+#37 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#38 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+#39 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#40 \vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php:57
+#41 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#42 \vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php:78
+#43 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#44 \vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php:49
+#45 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#46 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:121
+#47 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:64
+#48 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#49 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php:37
+  
+[2026-07-11 06:52:21] local.INFO: Model: App\Models\Category
+Relation: App\Models\Category
+Num-Called: 85
+Call-Stack:
+#11 \vendor\staudenmeir\laravel-adjacency-list\src\Eloquent\Traits\BuildsAdjacencyListQueries.php:26
+#14 \app\Models\Category.php:90
+#20 \app\Http\Controllers\CategoryController.php:200
+#21 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#22 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#23 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#24 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#25 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#26 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#27 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#28 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#29 \app\Http\Middleware\DemoMiddleware.php:34
+#30 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#31 \app\Http\Middleware\PreventBackHistory.php:12
+#32 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#33 \app\Http\Middleware\LanguageManager.php:58
+#34 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#35 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+#36 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#37 \vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php:57
+#38 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#39 \vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php:78
+#40 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#41 \vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php:49
+#42 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#43 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:121
+#44 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:64
+#45 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#46 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php:37
+#47 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#48 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\EncryptCookies.php:67
+#49 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+  
+[2026-07-11 06:54:40] local.INFO: Detected N+1 Query  
+[2026-07-11 06:54:40] local.INFO: Model: App\Models\Category
+Relation: App\Models\Item
+Num-Called: 85
+Call-Stack:
+#14 \vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:23
+#15 \vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:52
+#17 \app\Models\Category.php:85
+#23 \app\Http\Controllers\CategoryController.php:200
+#24 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#25 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#26 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#27 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#28 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#29 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#30 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#31 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#32 \app\Http\Middleware\DemoMiddleware.php:34
+#33 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#34 \app\Http\Middleware\PreventBackHistory.php:12
+#35 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#36 \app\Http\Middleware\LanguageManager.php:58
+#37 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#38 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+#39 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#40 \vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php:57
+#41 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#42 \vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php:78
+#43 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#44 \vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php:49
+#45 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#46 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:121
+#47 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:64
+#48 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#49 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php:37
+  
+[2026-07-11 06:54:40] local.INFO: Model: App\Models\Category
+Relation: App\Models\Category
+Num-Called: 85
+Call-Stack:
+#11 \vendor\staudenmeir\laravel-adjacency-list\src\Eloquent\Traits\BuildsAdjacencyListQueries.php:26
+#14 \app\Models\Category.php:90
+#20 \app\Http\Controllers\CategoryController.php:200
+#21 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#22 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#23 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#24 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#25 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#26 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#27 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#28 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#29 \app\Http\Middleware\DemoMiddleware.php:34
+#30 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#31 \app\Http\Middleware\PreventBackHistory.php:12
+#32 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#33 \app\Http\Middleware\LanguageManager.php:58
+#34 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#35 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+#36 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#37 \vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php:57
+#38 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#39 \vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php:78
+#40 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#41 \vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php:49
+#42 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#43 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:121
+#44 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:64
+#45 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#46 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php:37
+#47 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#48 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\EncryptCookies.php:67
+#49 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+  
+[2026-07-11 06:55:26] local.INFO: Detected N+1 Query  
+[2026-07-11 06:55:26] local.INFO: Model: App\Models\Category
+Relation: App\Models\Item
+Num-Called: 85
+Call-Stack:
+#14 \vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:23
+#15 \vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:52
+#17 \app\Models\Category.php:85
+#23 \app\Http\Controllers\CategoryController.php:200
+#24 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#25 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#26 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#27 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#28 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#29 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#30 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#31 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#32 \app\Http\Middleware\DemoMiddleware.php:34
+#33 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#34 \app\Http\Middleware\PreventBackHistory.php:12
+#35 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#36 \app\Http\Middleware\LanguageManager.php:58
+#37 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#38 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+#39 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#40 \vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php:57
+#41 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#42 \vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php:78
+#43 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#44 \vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php:49
+#45 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#46 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:121
+#47 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:64
+#48 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#49 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php:37
+  
+[2026-07-11 06:55:26] local.INFO: Model: App\Models\Category
+Relation: App\Models\Category
+Num-Called: 85
+Call-Stack:
+#11 \vendor\staudenmeir\laravel-adjacency-list\src\Eloquent\Traits\BuildsAdjacencyListQueries.php:26
+#14 \app\Models\Category.php:90
+#20 \app\Http\Controllers\CategoryController.php:200
+#21 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#22 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#23 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#24 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#25 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#26 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#27 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#28 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#29 \app\Http\Middleware\DemoMiddleware.php:34
+#30 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#31 \app\Http\Middleware\PreventBackHistory.php:12
+#32 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#33 \app\Http\Middleware\LanguageManager.php:58
+#34 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#35 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+#36 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#37 \vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php:57
+#38 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#39 \vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php:78
+#40 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#41 \vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php:49
+#42 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#43 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:121
+#44 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:64
+#45 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#46 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php:37
+#47 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#48 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\EncryptCookies.php:67
+#49 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+  
+[2026-07-11 06:55:47] local.INFO: Detected N+1 Query  
+[2026-07-11 06:55:47] local.INFO: Model: App\Models\Category
+Relation: parent
+Num-Called: 6
+Call-Stack:
+#11 \vendor\staudenmeir\laravel-adjacency-list\src\Eloquent\Traits\BuildsAdjacencyListQueries.php:26
+#19 \app\Models\Category.php:149
+#25 \app\Http\Controllers\CustomFieldController.php:221
+#26 \vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:240
+#27 \app\Http\Controllers\CustomFieldController.php:220
+#28 \vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:240
+#29 \app\Http\Controllers\CustomFieldController.php:219
+#30 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#31 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#32 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#33 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#34 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#35 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#36 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#37 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#38 \app\Http\Middleware\DemoMiddleware.php:34
+#39 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#40 \app\Http\Middleware\PreventBackHistory.php:12
+#41 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#42 \app\Http\Middleware\LanguageManager.php:58
+#43 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#44 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+#45 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#46 \vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php:57
+#47 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#48 \vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php:78
+#49 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+  
+[2026-07-11 06:55:47] local.INFO: Model: App\Models\Category
+Relation: App\Models\Translation
+Num-Called: 5
+Call-Stack:
+#24 \app\Models\Category.php:149
+#30 \app\Http\Controllers\CustomFieldController.php:221
+#31 \vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:240
+#32 \app\Http\Controllers\CustomFieldController.php:220
+#33 \vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:240
+#34 \app\Http\Controllers\CustomFieldController.php:219
+#35 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#36 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#37 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#38 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#39 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#40 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#41 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#42 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#43 \app\Http\Middleware\DemoMiddleware.php:34
+#44 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#45 \app\Http\Middleware\PreventBackHistory.php:12
+#46 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#47 \app\Http\Middleware\LanguageManager.php:58
+#48 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#49 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+  
+[2026-07-11 06:56:32] local.INFO: Detected N+1 Query  
+[2026-07-11 06:56:32] local.INFO: Model: App\Models\Category
+Relation: App\Models\Item
+Num-Called: 85
+Call-Stack:
+#14 \vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:23
+#15 \vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:52
+#17 \app\Models\Category.php:85
+#23 \app\Http\Controllers\CategoryController.php:200
+#24 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#25 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#26 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#27 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#28 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#29 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#30 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#31 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#32 \app\Http\Middleware\DemoMiddleware.php:34
+#33 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#34 \app\Http\Middleware\PreventBackHistory.php:12
+#35 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#36 \app\Http\Middleware\LanguageManager.php:58
+#37 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#38 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+#39 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#40 \vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php:57
+#41 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#42 \vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php:78
+#43 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#44 \vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php:49
+#45 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#46 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:121
+#47 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:64
+#48 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#49 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php:37
+  
+[2026-07-11 06:56:32] local.INFO: Model: App\Models\Category
+Relation: App\Models\Category
+Num-Called: 85
+Call-Stack:
+#11 \vendor\staudenmeir\laravel-adjacency-list\src\Eloquent\Traits\BuildsAdjacencyListQueries.php:26
+#14 \app\Models\Category.php:90
+#20 \app\Http\Controllers\CategoryController.php:200
+#21 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#22 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#23 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#24 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#25 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#26 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#27 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#28 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#29 \app\Http\Middleware\DemoMiddleware.php:34
+#30 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#31 \app\Http\Middleware\PreventBackHistory.php:12
+#32 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#33 \app\Http\Middleware\LanguageManager.php:58
+#34 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#35 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+#36 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#37 \vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php:57
+#38 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#39 \vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php:78
+#40 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#41 \vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php:49
+#42 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#43 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:121
+#44 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:64
+#45 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#46 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php:37
+#47 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#48 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\EncryptCookies.php:67
+#49 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+  
+[2026-07-11 06:56:44] local.INFO: Detected N+1 Query  
+[2026-07-11 06:56:44] local.INFO: Model: App\Models\Category
+Relation: parent
+Num-Called: 6
+Call-Stack:
+#11 \vendor\staudenmeir\laravel-adjacency-list\src\Eloquent\Traits\BuildsAdjacencyListQueries.php:26
+#19 \app\Models\Category.php:149
+#25 \app\Http\Controllers\CustomFieldController.php:221
+#26 \vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:240
+#27 \app\Http\Controllers\CustomFieldController.php:220
+#28 \vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:240
+#29 \app\Http\Controllers\CustomFieldController.php:219
+#30 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#31 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#32 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#33 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#34 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#35 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#36 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#37 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#38 \app\Http\Middleware\DemoMiddleware.php:34
+#39 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#40 \app\Http\Middleware\PreventBackHistory.php:12
+#41 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#42 \app\Http\Middleware\LanguageManager.php:58
+#43 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#44 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+#45 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#46 \vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php:57
+#47 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#48 \vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php:78
+#49 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+  
+[2026-07-11 06:56:44] local.INFO: Model: App\Models\Category
+Relation: App\Models\Translation
+Num-Called: 5
+Call-Stack:
+#24 \app\Models\Category.php:149
+#30 \app\Http\Controllers\CustomFieldController.php:221
+#31 \vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:240
+#32 \app\Http\Controllers\CustomFieldController.php:220
+#33 \vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:240
+#34 \app\Http\Controllers\CustomFieldController.php:219
+#35 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#36 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#37 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#38 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#39 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#40 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#41 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#42 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#43 \app\Http\Middleware\DemoMiddleware.php:34
+#44 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#45 \app\Http\Middleware\PreventBackHistory.php:12
+#46 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#47 \app\Http\Middleware\LanguageManager.php:58
+#48 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#49 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+  
+[2026-07-11 07:07:39] local.INFO: Detected N+1 Query  
+[2026-07-11 07:07:39] local.INFO: Model: App\Models\Category
+Relation: App\Models\Item
+Num-Called: 85
+Call-Stack:
+#14 \vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:23
+#15 \vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:52
+#17 \app\Models\Category.php:85
+#23 \app\Http\Controllers\CategoryController.php:200
+#24 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#25 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#26 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#27 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#28 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#29 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#30 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#31 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#32 \app\Http\Middleware\DemoMiddleware.php:34
+#33 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#34 \app\Http\Middleware\PreventBackHistory.php:12
+#35 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#36 \app\Http\Middleware\LanguageManager.php:58
+#37 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#38 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+#39 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#40 \vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php:57
+#41 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#42 \vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php:78
+#43 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#44 \vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php:49
+#45 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#46 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:121
+#47 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:64
+#48 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#49 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php:37
+  
+[2026-07-11 07:07:39] local.INFO: Model: App\Models\Category
+Relation: App\Models\Category
+Num-Called: 85
+Call-Stack:
+#11 \vendor\staudenmeir\laravel-adjacency-list\src\Eloquent\Traits\BuildsAdjacencyListQueries.php:26
+#14 \app\Models\Category.php:90
+#20 \app\Http\Controllers\CategoryController.php:200
+#21 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#22 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#23 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#24 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#25 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#26 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#27 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#28 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#29 \app\Http\Middleware\DemoMiddleware.php:34
+#30 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#31 \app\Http\Middleware\PreventBackHistory.php:12
+#32 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#33 \app\Http\Middleware\LanguageManager.php:58
+#34 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#35 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+#36 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#37 \vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php:57
+#38 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#39 \vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php:78
+#40 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#41 \vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php:49
+#42 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#43 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:121
+#44 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:64
+#45 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#46 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php:37
+#47 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#48 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\EncryptCookies.php:67
+#49 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+  
+[2026-07-11 07:34:43] local.INFO: Detected N+1 Query  
+[2026-07-11 07:34:43] local.INFO: Model: App\Models\Category
+Relation: App\Models\Item
+Num-Called: 85
+Call-Stack:
+#14 \vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:23
+#15 \vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:52
+#17 \app\Models\Category.php:85
+#23 \app\Http\Controllers\CategoryController.php:200
+#24 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#25 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#26 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#27 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#28 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#29 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#30 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#31 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#32 \app\Http\Middleware\DemoMiddleware.php:34
+#33 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#34 \app\Http\Middleware\PreventBackHistory.php:12
+#35 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#36 \app\Http\Middleware\LanguageManager.php:58
+#37 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#38 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+#39 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#40 \vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php:57
+#41 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#42 \vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php:78
+#43 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#44 \vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php:49
+#45 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#46 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:121
+#47 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:64
+#48 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#49 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php:37
+  
+[2026-07-11 07:34:43] local.INFO: Model: App\Models\Category
+Relation: App\Models\Category
+Num-Called: 85
+Call-Stack:
+#11 \vendor\staudenmeir\laravel-adjacency-list\src\Eloquent\Traits\BuildsAdjacencyListQueries.php:26
+#14 \app\Models\Category.php:90
+#20 \app\Http\Controllers\CategoryController.php:200
+#21 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#22 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#23 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#24 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#25 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#26 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#27 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#28 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#29 \app\Http\Middleware\DemoMiddleware.php:34
+#30 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#31 \app\Http\Middleware\PreventBackHistory.php:12
+#32 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#33 \app\Http\Middleware\LanguageManager.php:58
+#34 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#35 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+#36 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#37 \vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php:57
+#38 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#39 \vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php:78
+#40 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#41 \vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php:49
+#42 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#43 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:121
+#44 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:64
+#45 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#46 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php:37
+#47 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#48 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\EncryptCookies.php:67
+#49 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+  
+[2026-07-11 07:36:17] local.INFO: Detected N+1 Query  
+[2026-07-11 07:36:17] local.INFO: Model: App\Models\Category
+Relation: parent
+Num-Called: 6
+Call-Stack:
+#11 \vendor\staudenmeir\laravel-adjacency-list\src\Eloquent\Traits\BuildsAdjacencyListQueries.php:26
+#19 \app\Models\Category.php:149
+#25 \app\Http\Controllers\CustomFieldController.php:221
+#26 \vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:240
+#27 \app\Http\Controllers\CustomFieldController.php:220
+#28 \vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:240
+#29 \app\Http\Controllers\CustomFieldController.php:219
+#30 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#31 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#32 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#33 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#34 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#35 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#36 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#37 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#38 \app\Http\Middleware\DemoMiddleware.php:34
+#39 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#40 \app\Http\Middleware\PreventBackHistory.php:12
+#41 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#42 \app\Http\Middleware\LanguageManager.php:58
+#43 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#44 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+#45 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#46 \vendor\laravel\framework\src\Illuminate\Auth\Middleware\Authenticate.php:57
+#47 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#48 \vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php:78
+#49 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+  
+[2026-07-11 07:36:17] local.INFO: Model: App\Models\Category
+Relation: App\Models\Translation
+Num-Called: 5
+Call-Stack:
+#24 \app\Models\Category.php:149
+#30 \app\Http\Controllers\CustomFieldController.php:221
+#31 \vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:240
+#32 \app\Http\Controllers\CustomFieldController.php:220
+#33 \vendor\laravel\framework\src\Illuminate\Collections\Traits\EnumeratesValues.php:240
+#34 \app\Http\Controllers\CustomFieldController.php:219
+#35 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#36 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#37 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#38 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#39 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#40 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#41 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#42 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#43 \app\Http\Middleware\DemoMiddleware.php:34
+#44 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#45 \app\Http\Middleware\PreventBackHistory.php:12
+#46 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#47 \app\Http\Middleware\LanguageManager.php:58
+#48 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#49 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+  

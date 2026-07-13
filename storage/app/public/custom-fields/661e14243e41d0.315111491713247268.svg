@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="back" width="24" height="24" transform="translate(306.348 431.348)" fill="#00b2ca"/>
+    </clipPath>
+  </defs>
+  <g id="Warranty" transform="translate(-300.348 -425.348)">
+    <rect id="back-2" data-name="back" width="36" height="36" rx="10" transform="translate(300.348 425.348)" fill="#00b2ca" opacity="0.1"/>
+    <g id="Mask_Group_14" data-name="Mask Group 14" clip-path="url(#clip-path)">
+      <g id="security_9716052" transform="translate(304.348 429.348)">
+        <path id="Path_23490" data-name="Path 23490" d="M23.1,5.944a4.116,4.116,0,0,1-2.864-2.856A1.41,1.41,0,0,0,18.9,2H9.1A1.4,1.4,0,0,0,7.766,3.087,4.093,4.093,0,0,1,4.909,5.941,1.408,1.408,0,0,0,3.82,7.276v5.415a12.976,12.976,0,0,0,5.768,10.8l3.177,2.141a2.252,2.252,0,0,0,2.468,0l2.959-1.991A13.462,13.462,0,0,0,24.18,12.418V7.266A1.4,1.4,0,0,0,23.1,5.944Zm-4.279,6.12L13.6,17.286a1.309,1.309,0,0,1-.954.4,1.339,1.339,0,0,1-.968-.4l-2.5-2.5a1.374,1.374,0,0,1,0-1.936,1.358,1.358,0,0,1,1.923,0l1.542,1.55L16.9,10.141a1.36,1.36,0,1,1,1.923,1.923Z" fill="#00b2ca"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="back" width="24" height="24" transform="translate(26 589)" fill="#00b2ca"/>
+    </clipPath>
+  </defs>
+  <g id="Model" transform="translate(-20 -583)">
+    <rect id="back-2" data-name="back" width="36" height="36" rx="10" transform="translate(20 583)" fill="#00b2ca" opacity="0.1"/>
+    <g id="Mask_Group_22" data-name="Mask Group 22" clip-path="url(#clip-path)">
+      <path id="phone_8664599" d="M7.2,6a3.6,3.6,0,0,1,3.6-3.6H18A3.6,3.6,0,0,1,21.6,6V22.8A3.6,3.6,0,0,1,18,26.4H10.8a3.6,3.6,0,0,1-3.6-3.6ZM18,7.2A1.2,1.2,0,1,0,16.8,6,1.2,1.2,0,0,0,18,7.2Z" transform="translate(23.6 586.6)" fill="#00b2ca" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

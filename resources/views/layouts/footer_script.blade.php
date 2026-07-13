@@ -77,6 +77,8 @@
 <script type="text/javascript" src="{{asset('assets/extensions/bootstrap-table/export/bootstrap-table-export.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/extensions/bootstrap-table/export/tableExport.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/extensions/bootstrap-table/export/jspdf.umd.min.js')}}"></script>
+{{-- tableExport builds the PDF via jspdf.autotable; without this plugin the PDF exports blank. --}}
+<script type="text/javascript" src="{{asset('assets/extensions/bootstrap-table/export/jspdf.plugin.autotable.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/extensions/bootstrap-table/mobile/bootstrap-table-mobile.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/extensions/bootstrap-table/filter/bootstrap-table-filter-control.min.js')}}"></script>
 

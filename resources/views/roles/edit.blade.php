@@ -18,7 +18,7 @@
                         <div class="d-flex justify-content-end">
                             <a class="btn btn-primary" href="{{ route('roles.index') }}">{{ __('Back') }}</a>
                         </div>
-                        {!! Form::model($role, ['method' => 'PATCH', 'class' => 'edit-form', 'route' => ['roles.update', $role->id]]) !!}
+                        {!! Form::model($role, ['method' => 'PATCH', 'class' => 'edit-form', 'data-success-function' => 'successFunction', 'route' => ['roles.update', $role->id]]) !!}
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
@@ -74,4 +74,14 @@
             </div>
         </div>
     </div>
+@endsection
+@section('js')
+    <script>
+        function successFunction() {
+            // Send the user back to the roles list once the success toast has shown.
+            setTimeout(function () {
+                window.location.href = "{{ route('roles.index') }}";
+            }, 1000);
+        }
+    </script>
 @endsection

@@ -80,9 +80,13 @@ class ItemApiController extends BaseApiController
         try {
             // Step 1: Base validation rules
             $rules = [
-                'name'                 => 'required',
+                // Title must contain at least one letter — blocks pure-number garbage.
+                'name'                 => ['required', 'string', 'min:3', 'max:150', 'regex:/^(?=.*\p{L})[\p{L}\p{N}\s\-&\'.,()\/+#%"]+$/u'],
                 'category_id'          => 'required|integer',
-                'description'          => 'required',
+                'description'          => 'required|string|max:5000',
+                'price'                => 'nullable|numeric|min:0|max:999999999',
+                'min_salary'           => 'nullable|numeric|min:0|max:999999999',
+                'max_salary'           => 'nullable|numeric|min:0|max:999999999',
                 'latitude'             => 'required',
                 'longitude'            => 'required',
                 'address'              => 'required',
@@ -117,16 +121,19 @@ class ItemApiController extends BaseApiController
             $isPriceOptional = $category->price_optional;
 
             if ($isJobCategory || $isPriceOptional) {
-                $rules['min_salary'] = 'nullable|numeric|min:0';
+                $rules['min_salary'] = 'nullable|numeric|min:0|max:999999999';
                 if (isset($request->min_salary) && $request->min_salary > 0) {
-                    $rules['max_salary'] = 'nullable|numeric|gte:min_salary';
+                    $rules['max_salary'] = 'nullable|numeric|gte:min_salary|max:999999999';
                 }
             } else {
-                $rules['price'] = 'required|numeric|min:0';
+                $rules['price'] = 'required|numeric|min:0|max:999999999';
             }
 
             // Step 3: Run single combined validator
-            $validator = Validator::make($request->all(), $rules);
+            $validator = Validator::make($request->all(), $rules, [
+                'name.regex' => 'Title must contain letters — it cannot be only numbers or symbols.',
+                'price.max' => 'Price is too large. Maximum allowed is 999,999,999.',
+            ]);
 
             if ($validator->fails()) {
                 return ResponseService::validationError($validator->errors()->first());

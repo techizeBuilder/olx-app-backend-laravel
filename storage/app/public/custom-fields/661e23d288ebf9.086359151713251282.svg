@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="back" width="24" height="24" transform="translate(26 589)" fill="#00b2ca"/>
+    </clipPath>
+  </defs>
+  <g id="IMEI_Number" data-name="IMEI Number" transform="translate(-20 -583)">
+    <rect id="back-2" data-name="back" width="36" height="36" rx="10" transform="translate(20 583)" fill="#00b2ca" opacity="0.1"/>
+    <g id="Mask_Group_21" data-name="Mask Group 21" clip-path="url(#clip-path)">
+      <g id="solid" transform="translate(25.2 588.2)">
+        <path id="Path_23506" data-name="Path 23506" d="M8.4,7.6A7.536,7.536,0,0,1,9.308,4H4.8a2,2,0,0,0-2,2V22.8a2,2,0,0,0,2,2h9.6a2,2,0,0,0,2-2V15.2H16A7.6,7.6,0,0,1,8.4,7.6ZM13.6,22h-8a.4.4,0,1,1,0-.8h8a.4.4,0,1,1,0,.8Z" fill="#00b2ca"/>
+        <path id="Path_23507" data-name="Path 23507" d="M16,.8a6.8,6.8,0,1,0,6.8,6.8A6.8,6.8,0,0,0,16,.8Zm.8,10H15.2a.4.4,0,1,1,0-.8h.4V5.2h-.4a.4.4,0,0,1,0-.8H16a.4.4,0,0,1,.4.4V10h.4a.4.4,0,0,1,0,.8Z" fill="#00b2ca"/>
+      </g>
+    </g>
+  </g>
+</svg>

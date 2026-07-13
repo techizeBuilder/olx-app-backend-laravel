@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="back" width="24" height="24" transform="translate(26 589)" fill="#00b2ca"/>
+    </clipPath>
+  </defs>
+  <g id="Damages_on_Device" data-name="Damages on Device" transform="translate(-20 -583)">
+    <rect id="back-2" data-name="back" width="36" height="36" rx="10" transform="translate(20 583)" fill="#00b2ca" opacity="0.1"/>
+    <g id="Mask_Group_16" data-name="Mask Group 16" clip-path="url(#clip-path)">
+      <g id="alert_8068828" transform="translate(26 589)">
+        <path id="Path_23501" data-name="Path 23501" d="M12,5.9a4.65,4.65,0,1,0,4.65,4.65A4.65,4.65,0,0,0,12,5.9Zm.7,7.6H11.3V12.094h1.4Zm0-2.625H11.3V7.594h1.4Z" fill="#00b2ca"/>
+        <path id="Path_23502" data-name="Path 23502" d="M19.463,2.7a2.7,2.7,0,0,0-2.7-2.7H7.234a2.7,2.7,0,0,0-2.7,2.7V19.078H19.463ZM12,16.6a6.063,6.063,0,0,1-6.057-6.057c.3-8.024,11.81-8.022,12.113,0A6.063,6.063,0,0,1,12,16.6Z" fill="#00b2ca"/>
+        <path id="Path_23503" data-name="Path 23503" d="M4.537,21.3a2.7,2.7,0,0,0,2.7,2.7h9.532a2.7,2.7,0,0,0,2.7-2.7v-.819H4.537Z" fill="#00b2ca"/>
+      </g>
+    </g>
+  </g>
+</svg>
