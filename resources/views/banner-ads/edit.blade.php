@@ -55,15 +55,15 @@
 
                                         <div class="mb-3">
                                             <label class="form-label">{{ __('Banner Image') }}</label>
-                                            @if ($item)
-                                                <div class="mb-2">
-                                                    <img src="{{ $item->image }}" alt="banner" class="rounded"
-                                                         style="max-width:320px;max-height:110px;object-fit:cover;"
-                                                         onerror="onErrorImage(event)">
-                                                </div>
-                                            @endif
+                                            <div class="mb-2">
+                                                {{-- Full URL straight from the model accessor. --}}
+                                                <img src="{{ $item ? $item->image : '' }}"
+                                                     alt="banner" class="rounded banner-edit-preview {{ $item ? '' : 'd-none' }}"
+                                                     style="max-width:320px;max-height:110px;object-fit:cover;"
+                                                     onerror="onErrorImage(event)">
+                                            </div>
                                             <input type="file" name="banners[{{ $i }}][image]" accept=".jpg,.jpeg,.png"
-                                                   class="form-control">
+                                                   class="form-control banner-file-input">
                                             <small class="text-muted">
                                                 {{ __('Leave empty to keep the current image. Max 8 MB, recommended 741 x 220 px.') }}
                                             </small>
@@ -144,6 +144,15 @@
             $slot.find('.target-field').addClass('d-none');
             if (type !== 'only_banner') {
                 $slot.find('.target-' + type).removeClass('d-none');
+            }
+        });
+
+        // Preview the newly chosen file immediately.
+        $(document).on('change', '.banner-file-input', function () {
+            const file = this.files[0];
+            const $preview = $(this).closest('.banner-slot').find('.banner-edit-preview');
+            if (file) {
+                $preview.attr('src', URL.createObjectURL(file)).removeClass('d-none');
             }
         });
 

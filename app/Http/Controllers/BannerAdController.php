@@ -69,6 +69,7 @@ class BannerAdController extends Controller
             $tempRow['page_label']     = $row->page_label;
             $tempRow['layout_label']   = $row->layout_label;
             $tempRow['ad_type_label']  = $row->ad_type_label;
+            // Full image URL straight from the model accessor (same as the API).
             $tempRow['images']         = $row->bannerItems->pluck('image')->toArray();
 
             $operate = '';
@@ -106,6 +107,24 @@ class BannerAdController extends Controller
             ResponseService::validationError($validator->errors()->first());
         }
 
+        $banners = $this->normalisedBanners($request);
+
+        // Compress+upload before opening the transaction. Image work can take
+        // seconds, and holding the DB connection idle that long makes MySQL drop
+        // it ("server has gone away") on hosts with a short wait_timeout.
+        $uploaded = [];
+        try {
+            foreach ($banners as $i => $data) {
+                $uploaded[$i] = FileService::compressAndUpload($data['image'], $this->uploadFolder);
+            }
+        } catch (Throwable $th) {
+            $this->deleteUploads($uploaded);
+            ResponseService::logErrorResponse($th, 'BannerAdController -> store (upload)');
+            ResponseService::errorResponse();
+
+            return;
+        }
+
         try {
             DB::beginTransaction();
 
@@ -117,10 +136,10 @@ class BannerAdController extends Controller
                 'status'   => 1,
             ]);
 
-            foreach ($this->normalisedBanners($request) as $position => $data) {
+            foreach ($banners as $position => $data) {
                 BannerItem::create([
                     'banner_id'     => $banner->id,
-                    'image'         => FileService::compressAndUpload($data['image'], $this->uploadFolder),
+                    'image'         => $uploaded[$position],
                     'ad_type'       => $data['ad_type'],
                     'category_id'   => $data['ad_type'] === 'category' ? $data['category_id'] : null,
                     'item_id'       => $data['ad_type'] === 'advertisement' ? $data['item_id'] : null,
@@ -133,6 +152,7 @@ class BannerAdController extends Controller
             ResponseService::successResponse('Banner Ad created successfully');
         } catch (Throwable $th) {
             DB::rollBack();
+            $this->deleteUploads($uploaded); // the rows are gone, don't leave the files behind
             ResponseService::logErrorResponse($th, 'BannerAdController -> store');
             ResponseService::errorResponse();
         }
@@ -162,6 +182,25 @@ class BannerAdController extends Controller
             ResponseService::validationError($validator->errors()->first());
         }
 
+        $banners  = $this->normalisedBanners($request);
+        $existing = $banner->bannerItems->keyBy('position');
+
+        // Upload any new images before the transaction — see store() for why.
+        $uploaded = [];
+        try {
+            foreach ($banners as $i => $data) {
+                if (! empty($data['image'])) {
+                    $uploaded[$i] = FileService::compressAndUpload($data['image'], $this->uploadFolder);
+                }
+            }
+        } catch (Throwable $th) {
+            $this->deleteUploads($uploaded);
+            ResponseService::logErrorResponse($th, 'BannerAdController -> update (upload)');
+            ResponseService::errorResponse();
+
+            return;
+        }
+
         try {
             DB::beginTransaction();
 
@@ -173,23 +212,24 @@ class BannerAdController extends Controller
                 'status'   => $request->input('status', $banner->status),
             ]);
 
-            $existing = $banner->bannerItems->keyBy('position');
-            $keptIds  = [];
+            $keptIds    = [];
+            $replaced   = []; // old images to drop once the commit succeeds
 
-            foreach ($this->normalisedBanners($request) as $index => $data) {
+            foreach ($banners as $index => $data) {
                 $position = $index + 1;
                 $current  = $existing->get($position);
 
                 $image = $current?->getRawOriginal('image');
-                if (! empty($data['image'])) {
-                    $image = FileService::compressAndUpload($data['image'], $this->uploadFolder);
+                if (isset($uploaded[$index])) {
                     if ($current) {
-                        Storage::disk('public')->delete($current->getRawOriginal('image'));
+                        $replaced[] = $current->getRawOriginal('image');
                     }
+                    $image = $uploaded[$index];
                 }
 
                 if (empty($image)) {
                     DB::rollBack();
+                    $this->deleteUploads($uploaded);
                     ResponseService::validationError("Banner {$position} image is required.");
 
                     return;
@@ -216,17 +256,32 @@ class BannerAdController extends Controller
             // Switching Dual -> Single leaves an orphan second image; drop it.
             foreach ($banner->bannerItems as $item) {
                 if (! in_array($item->id, $keptIds, true)) {
-                    Storage::disk('public')->delete($item->getRawOriginal('image'));
+                    $replaced[] = $item->getRawOriginal('image');
                     $item->delete();
                 }
             }
 
             DB::commit();
+
+            // Only now are the old files truly unreferenced — a rollback above must
+            // leave them intact.
+            $this->deleteUploads($replaced);
             ResponseService::successResponse('Banner Ad updated successfully');
         } catch (Throwable $th) {
             DB::rollBack();
+            $this->deleteUploads($uploaded); // nothing was saved, drop the new files
             ResponseService::logErrorResponse($th, 'BannerAdController -> update');
             ResponseService::errorResponse();
+        }
+    }
+
+    /**
+     * Remove image files from the public disk, ignoring blanks.
+     */
+    private function deleteUploads(array $paths): void
+    {
+        foreach (array_filter($paths) as $path) {
+            Storage::disk('public')->delete($path);
         }
     }
 

@@ -101,7 +101,7 @@
 
 @section('js')
     <script>
-        // Show every image belonging to the banner group (1 for single, 2 for dual).
+        // Backend already sends the full image URL — use it directly.
         function bannerImagesFormatter(value) {
             if (!value || !value.length) {
                 return '-';
